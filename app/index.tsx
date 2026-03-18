@@ -1,42 +1,12 @@
-import { ScrollView, StyleSheet } from 'react-native';
-
-import TripCard from '@/components/TripCard';
-import type { TripCardProps } from '@/components/TripCard';
-
-const trips: TripCardProps[] = [
-  {
-    title: 'Holiday in Poland',
-    destination: 'Warsaw',
-    date: '2026-03-11',
-    rating: 5,
-  },
-  {
-    title: 'Weekend in Krakow',
-    destination: 'Krakow',
-    date: '2026-04-02',
-    rating: 4,
-  },
-  {
-    title: 'Trip to Bali',
-    destination: 'Ubud',
-    date: '2026-07-20',
-    rating: 3,
-  },
-];
+import { StyleSheet, Text, View } from 'react-native';
 
 export default function HomeScreen() {
   return (
-    <ScrollView contentContainerStyle={styles.content} style={styles.container}>
-      {trips.map((trip) => (
-        <TripCard
-          key={`${trip.title}-${trip.date}`}
-          title={trip.title}
-          destination={trip.destination}
-          date={trip.date}
-          rating={trip.rating}
-        />
-      ))}
-    </ScrollView>
+    <View style={styles.container}>
+      <Text style={styles.title}>TravelSnap</Text>
+      <Text style={styles.subtitle}>Twój dziennik podróży</Text>
+      <Text style={styles.author}>Kajetan Kisielewski</Text>
+    </View>
   );
 }
 
@@ -44,8 +14,24 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#f5f5f5',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 20,
   },
-  content: {
-    padding: 16,
+  title: {
+    fontSize: 32,
+    fontWeight: 'bold',
+    color: '#1a1a2e',
+    marginBottom: 8,
+  },
+  subtitle: {
+    fontSize: 18,
+    color: '#e94560',
+    marginBottom: 24,
+  },
+  author: {
+    fontSize: 16,
+    color: '#888',
+    fontStyle: 'italic',
   },
 });
