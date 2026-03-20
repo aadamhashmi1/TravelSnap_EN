@@ -1,76 +1,23 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import RatingStars from './RatingStars';
+import { StyleSheet, Text, View } from 'react-native';
 
-type Trip = {
-  id: string;
-  title: string;
-  destination: string;
-  date: string;
+type Props = {
   rating: number;
 };
 
-type Props = {
-  trip: Trip;
-  onDelete: (id: string) => void;
-};
-
-export default function TripCard({ trip, onDelete }: Props) {
+export default function RatingStars({ rating }: Props) {
   return (
-    <View style={styles.card}>
-      <View style={styles.header}>
-        <Text style={styles.title}>{trip.title}</Text>
-        <TouchableOpacity onPress={() => onDelete(trip.id)} style={styles.deleteBtn}>
-          <Text style={styles.deleteText}>✕</Text>
-        </TouchableOpacity>
-      </View>
-      <Text style={styles.destination}>📍 {trip.destination}</Text>
-      <Text style={styles.date}>🗓 {trip.date}</Text>
-      <RatingStars rating={trip.rating} />
+    <View style={styles.container}>
+      {[1, 2, 3, 4, 5].map((star) => (
+        <Text key={star} style={star <= rating ? styles.filled : styles.empty}>
+          ★
+        </Text>
+      ))}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  card: {
-    backgroundColor: '#fff',
-    borderRadius: 12,
-    padding: 16,
-    marginBottom: 12,
-    shadowColor: '#000',
-    shadowOpacity: 0.08,
-    shadowRadius: 8,
-    elevation: 3,
-  },
-  header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: 6,
-  },
-  title: {
-    fontSize: 17,
-    fontWeight: '700',
-    flex: 1,
-  },
-  deleteBtn: {
-    backgroundColor: '#fee2e2',
-    borderRadius: 6,
-    paddingHorizontal: 8,
-    paddingVertical: 4,
-  },
-  deleteText: {
-    color: '#ef4444',
-    fontWeight: '700',
-    fontSize: 13,
-  },
-  destination: {
-    fontSize: 14,
-    color: '#6b7280',
-    marginBottom: 4,
-  },
-  date: {
-    fontSize: 14,
-    color: '#6b7280',
-    marginBottom: 8,
-  },
+  container: { flexDirection: 'row' },
+  filled: { color: '#f59e0b', fontSize: 18 },
+  empty: { color: '#d1d5db', fontSize: 18 },
 });

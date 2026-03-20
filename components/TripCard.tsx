@@ -47,30 +47,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 6,
   },
-  title: {
-    fontSize: 17,
-    fontWeight: '700',
-    flex: 1,
-  },
+  title: { fontSize: 17, fontWeight: '700', flex: 1 },
   deleteBtn: {
     backgroundColor: '#fee2e2',
     borderRadius: 6,
     paddingHorizontal: 8,
     paddingVertical: 4,
   },
-  deleteText: {
-    color: '#ef4444',
-    fontWeight: '700',
-    fontSize: 13,
-  },
-  destination: {
-    fontSize: 14,
-    color: '#6b7280',
-    marginBottom: 4,
-  },
-  date: {
-    fontSize: 14,
-    color: '#6b7280',
-    marginBottom: 8,
-  },
+  deleteText: { color: '#ef4444', fontWeight: '700', fontSize: 13 },
+  destination: { fontSize: 14, color: '#6b7280', marginBottom: 4 },
+  date: { fontSize: 14, color: '#6b7280', marginBottom: 8 },
 });
