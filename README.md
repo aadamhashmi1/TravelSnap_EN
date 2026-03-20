@@ -1,56 +1,40 @@
 # TravelSnap
 
-Main project for the **Mobile Programming Languages - React Native with Expo** lecture series. 
-TravelSnap is a travel journal application developed live and expanded lesson by lesson.
+**Branch:** `lesson-3`
 
-## 📚 Course Context
+## 🎯 Practical Task: Lesson 3 — State, Hooks, and Interactivity
 
-- **Duration:** 30 teaching hours (15 meetings x 2h)
-- **Tech Stack:** React Native, Expo, Expo Router, TypeScript
-- **Goal:** Build a fully functional mobile app from scratch to deployment.
+If you completed all exercises above - you have most of the assignment done. Make sure:
 
-## 🚀 How to run this project
+### >> Core task - to submit
 
-1. Clone the repository
+1. `HomeScreen` has `useState` with an empty trips array.
+2. Form with 4 fields: `title`, `destination`, `date`, `rating`.
+3. 'Add' button -> `handleAddTrip` -> new `TripCard`.
+4. Trip list displayed via `.map()` with `TripCard`.
+5. Every `TripCard` has `key={trip.id}`.
+6. Rating: `TextInput` -> `Number()` -> prop (number).
+7. Validation: empty fields do NOT add a card.
+
+### /!\ Extension (extra points)
+
+1. Delete button in `TripCard` (`onDelete` prop).
+2. Rating validation: only 1-5.
+3. Display trip count above list.
+4. Date validation: YYYY-MM format.
+
+---
+
+## 🚀 How to run this code?
+
+If you want to see the completed solution for this lesson:
+
+1. Clone the repository and switch to the `lesson-3` branch.
 2. Install dependencies:
    ```bash
    npm install
    ```
-3. Start the development server:
+3. Start the project:
    ```bash
    npx expo start
    ```
-4. Open the app using the **Expo Go** app on your physical device or an emulator.
-
-## 📂 Project Structure & Branches
-
-This repository uses branches to separate the code for each lesson. To see the code exactly as it was at the end of a specific lesson, switch to its branch:
-
-- `master` / `main` - The latest, most up-to-date code.
-- `lesson-1` - Project bootstrap and welcome screen.
-- `lesson-2` - JSX, components, and props (`TripCard`, `RatingStars`).
-*(More branches will be added as the course progresses)*
-
-## 🗺️ Course Roadmap
-
-Here is the plan for our 15 meetings:
-
-1. **Lesson 1:** Intro to React Native & Expo. Project bootstrap.
-2. **Lesson 2:** JSX, components, props (`TripCard`, `RatingStars`).
-3. **Lesson 3:** State, hooks (`useState`), and interactive "add trip" form.
-4. **Lesson 4:** Styling system (`StyleSheet`) and Flexbox layouts.
-5. **Lesson 5:** Navigation with Expo Router (Stack + Tabs).
-6. **Lesson 6:** Performance lists with `FlatList`.
-7. **Lesson 7:** Advanced forms and validation.
-8. **Lesson 8:** Global state with Context API.
-9. **Lesson 9:** Data persistence with AsyncStorage.
-10. **Lesson 10:** REST API integration (`fetch`).
-11. **Lesson 11:** Multimedia: camera and gallery (`expo-image-picker`).
-12. **Lesson 12:** Location services and maps (`react-native-maps`).
-13. **Lesson 13:** Animations and UX polish.
-14. **Lesson 14:** Build and release preparation (EAS).
-15. **Lesson 15:** Code review, testing, and final wrap-up.
-
-## 📊 Presentations
-
-Lecture slides (`.pptx`) are available in the `presentations/` directory of this repository.
